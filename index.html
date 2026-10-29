@@ -1,208 +1,104 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Level up your DevOps skills through technical challenges, missions, and practical learning.">
-    <title>DevOps Level Up | Learn. Solve. Level Up.</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn real-world DevOps skills through missions, challenges, and XP.">
+  <title>DevOps Level Up | Learn. Solve. Level Up.</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="DevOps Level Up home">
+      <span class="brand-mark">&gt;_</span>
+      <span>DEVOPS<span class="accent"> LEVEL UP</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#missions">Missions</a>
+      <a href="#progress">My progress</a>
+    </nav>
+    <div class="top-xp"><span class="status-dot"></span><span id="top-xp">0 XP</span></div>
+  </header>
 
-    <header class="navbar">
-        <a href="#" class="logo">DEVOPS<span>LEVEL UP</span></a>
-
-        <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#missions">Missions</a>
-            <a href="#leaderboard">Leaderboard</a>
-        </nav>
-
-        <div class="player-info">
-            <span>⭐ <span id="nav-xp">0</span> XP</span>
-            <div class="avatar">P</div>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> YOUR DEVOPS TRAINING GROUND</p>
+        <h1>Learn. Solve.<br><span class="gradient-text">Level Up.</span></h1>
+        <p class="hero-text">Build real-world DevOps skills one mission at a time. Investigate incidents, solve challenges, earn XP, and become the engineer your future needs.</p>
+        <a class="button primary" href="#missions">Enter Mission Control <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-panel">
+        <div class="terminal-head"><span></span><span></span><span></span><small>mission-control.sh</small></div>
+        <div class="terminal-body">
+          <p><span class="terminal-muted">trainee@level-up:~$</span> status</p>
+          <p class="terminal-green">● SYSTEM ONLINE</p>
+          <p><span class="terminal-muted">current_path:</span> Linux Fundamentals</p>
+          <p><span class="terminal-muted">next_objective:</span> Solve your first incident</p>
+          <p><span class="terminal-muted">reward:</span> <span class="terminal-green">XP + practical skills</span></p>
+          <p class="terminal-cursor">_</p>
         </div>
-    </header>
+        <div class="terminal-foot"><span>MISSION STATUS</span><strong>READY TO DEPLOY</strong></div>
+      </div>
+    </section>
 
-    <main class="container">
+    <section class="stats-grid" id="progress" aria-label="Player statistics">
+      <article class="stat-card"><span class="stat-icon">⚡</span><div><p>Total XP</p><strong id="stat-xp">0</strong><small>Experience points</small></div></article>
+      <article class="stat-card"><span class="stat-icon">◈</span><div><p>Current rank</p><strong id="stat-rank">Rookie</strong><small id="rank-next">Your journey starts here</small></div></article>
+      <article class="stat-card"><span class="stat-icon">✓</span><div><p>Challenges solved</p><strong id="stat-solved">0</strong><small>Correct answers</small></div></article>
+      <article class="stat-card"><span class="stat-icon">◎</span><div><p>Missions cleared</p><strong id="stat-missions">0 / 1</strong><small>Keep moving forward</small></div></article>
+    </section>
 
-        <section class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">YOUR TECHNICAL JOURNEY STARTS HERE</p>
-                <h1>Don't just learn DevOps.<br><span>Master the mission.</span></h1>
-                <p class="hero-description">
-                    Solve real-world technical challenges, earn experience points,
-                    unlock new levels, and build your engineering skills.
-                </p>
-                <a href="#missions" class="primary-button">Explore Missions →</a>
-            </div>
+    <section class="section" id="missions">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHOOSE YOUR NEXT MOVE</p><h2>Mission Control</h2><p class="section-subtitle">Every mission is a chance to practise the way a DevOps engineer thinks.</p></div>
+        <span class="section-tag"><span class="status-dot"></span> 1 MISSION AVAILABLE</span>
+      </div>
+      <article class="mission-card">
+        <div class="mission-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="linux-symbol">$_</div><span class="art-label">MISSION 01</span></div>
+        <div class="mission-info">
+          <div class="mission-meta"><span class="pill green-pill">AVAILABLE</span><span class="pill">LINUX</span><span class="difficulty">★★☆ Beginner+</span></div>
+          <h3>Linux Incident Response</h3>
+          <p>A server is behaving strangely. Investigate disk space, file permissions, CPU load, SSH access, and a failed service. Choose the safest next step for each incident.</p>
+          <div class="mission-details"><span>▣ 5 challenges</span><span>⚡ Up to 175 XP</span><span>◷ 10–15 min</span></div>
+          <button class="button primary" id="start-mission">Start mission <span aria-hidden="true">→</span></button>
+        </div>
+      </article>
 
-            <div class="hero-card">
-                <div class="terminal-header">
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
-                    <span>devops-terminal</span>
-                </div>
-                <div class="terminal-body">
-                    <p><span class="green">player@devops</span>:~$ start-journey</p>
-                    <p>Initializing learning environment...</p>
-                    <p class="green">✓ Linux fundamentals</p>
-                    <p class="green">✓ Automation challenges</p>
-                    <p class="green">✓ Engineering mindset</p>
-                    <p><span class="green">player@devops</span>:~$ <span class="cursor">_</span></p>
-                </div>
-            </div>
-        </section>
+      <div class="coming-grid">
+        <article class="coming-card"><span class="coming-icon">⌘</span><div><span class="pill">COMING NEXT</span><h3>Bash & Scripting</h3><p>Automate repetitive tasks and write useful scripts.</p></div><span class="lock">🔒</span></article>
+        <article class="coming-card"><span class="coming-icon">⑂</span><div><span class="pill">COMING NEXT</span><h3>Git & GitHub</h3><p>Track changes and collaborate like a developer.</p></div><span class="lock">🔒</span></article>
+        <article class="coming-card"><span class="coming-icon">☁</span><div><span class="pill">COMING NEXT</span><h3>AWS & Cloud</h3><p>Learn to deploy and operate cloud infrastructure.</p></div><span class="lock">🔒</span></article>
+      </div>
+    </section>
 
-        <section id="dashboard" class="dashboard-section">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">YOUR PERFORMANCE</p>
-                    <h2>Player Dashboard</h2>
-                </div>
-                <span class="status-badge">● SYSTEM READY</span>
-            </div>
+    <section class="game-panel hidden" id="game-panel" aria-live="polite">
+      <div class="game-topline"><div><p class="eyebrow">ACTIVE MISSION</p><h2 id="game-title">Linux Incident Response</h2></div><button class="button ghost" id="exit-mission">Exit mission ×</button></div>
+      <div class="game-progress-row"><span id="question-count">Challenge 1 of 5</span><span id="mission-percent">0% complete</span></div>
+      <div class="progress-track"><div class="progress-fill" id="mission-progress"></div></div>
+      <div class="incident-box"><span class="incident-label">INCIDENT BRIEFING</span><p id="incident-brief">A server needs your help.</p></div>
+      <div class="challenge-card">
+        <div class="challenge-meta"><span id="challenge-category" class="pill green-pill">LINUX</span><span id="challenge-points">+25 XP</span></div>
+        <h3 id="challenge-question">What should you do first?</h3>
+        <p id="challenge-context" class="challenge-context"></p>
+        <div id="answer-list" class="answer-list"></div>
+        <div id="feedback" class="feedback hidden" role="status"></div>
+        <div class="challenge-actions"><button class="button ghost" id="hint-button">Show hint</button><button class="button primary" id="submit-answer" disabled>Check answer</button><button class="button primary hidden" id="next-challenge">Next challenge →</button></div>
+        <p id="hint-text" class="hint-text hidden"></p>
+      </div>
+    </section>
 
-            <div class="stats-grid">
-                <article class="stat-card">
-                    <p>Total Experience</p>
-                    <h3><span id="total-xp">0</span> <small>XP</small></h3>
-                    <span class="stat-note">Earn XP by solving challenges</span>
-                </article>
+    <section class="completion-panel hidden" id="completion-panel" aria-live="polite">
+      <div class="completion-icon">🏆</div><p class="eyebrow">MISSION REPORT</p><h2 id="completion-title">Mission cleared!</h2>
+      <p id="completion-message">You made progress on your DevOps journey.</p>
+      <div class="completion-stats"><div><span>Correct answers</span><strong id="completion-correct">0 / 5</strong></div><div><span>XP earned this run</span><strong id="completion-xp">0 XP</strong></div></div>
+      <button class="button primary" id="back-to-missions">Back to mission control →</button>
+    </section>
 
-                <article class="stat-card">
-                    <p>Current Level</p>
-                    <h3 id="current-level">01</h3>
-                    <span class="stat-note" id="rank-name">Linux Recruit</span>
-                </article>
+    <section class="tip-banner"><div class="tip-icon">✦</div><div><strong>Real engineer mindset</strong><p>Investigate before changing things. Read the error, gather evidence, and choose the safest fix—not just the fastest command.</p></div></section>
+  </main>
 
-                <article class="stat-card">
-                    <p>Challenges Completed</p>
-                    <h3 id="completed-count">0</h3>
-                    <span class="stat-note">Keep progressing</span>
-                </article>
-
-                <article class="stat-card">
-                    <p>Success Rate</p>
-                    <h3><span id="success-rate">0</span><small>%</small></h3>
-                    <span class="stat-note">Based on submitted answers</span>
-                </article>
-            </div>
-        </section>
-
-        <section id="missions" class="missions-section">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">CHOOSE YOUR NEXT CHALLENGE</p>
-                    <h2>Mission Control</h2>
-                </div>
-                <span class="muted">Stage 01 / Linux</span>
-            </div>
-
-            <div class="mission-card">
-                <div class="mission-icon">🐧</div>
-                <div class="mission-details">
-                    <span class="difficulty">STAGE 01 · INTERMEDIATE</span>
-                    <h3>Linux Survival</h3>
-                    <p>
-                        Investigate system problems, understand Linux permissions,
-                        and prove you can troubleshoot a server.
-                    </p>
-                    <div class="progress-track">
-                        <div class="progress-fill" id="mission-progress"></div>
-                    </div>
-                    <small id="progress-label">0 of 5 challenges completed</small>
-                </div>
-                <button class="primary-button" id="start-mission">Enter Mission →</button>
-            </div>
-
-            <div class="locked-missions">
-                <article class="locked-card">
-                    <span>⚙️</span>
-                    <h3>Bash Automation</h3>
-                    <p>Automate repetitive system tasks.</p>
-                    <span class="locked-label">🔒 COMING SOON</span>
-                </article>
-
-                <article class="locked-card">
-                    <span>🌿</span>
-                    <h3>Git & GitHub</h3>
-                    <p>Master version control and collaboration.</p>
-                    <span class="locked-label">🔒 COMING SOON</span>
-                </article>
-
-                <article class="locked-card">
-                    <span>☁️</span>
-                    <h3>AWS Cloud</h3>
-                    <p>Deploy and manage cloud infrastructure.</p>
-                    <span class="locked-label">🔒 COMING SOON</span>
-                </article>
-            </div>
-        </section>
-
-        <section id="challenge-arena" class="challenge-section hidden">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">MISSION 01 · LINUX</p>
-                    <h2>Challenge Arena</h2>
-                </div>
-                <span id="question-counter" class="muted">Challenge 1 of 5</span>
-            </div>
-
-            <div class="challenge-card">
-                <div class="challenge-topline">
-                    <span id="question-category">SYSTEM TROUBLESHOOTING</span>
-                    <span id="question-points">+25 XP</span>
-                </div>
-
-                <h3 id="question-text"></h3>
-                <p id="question-context" class="question-context"></p>
-
-                <div id="answer-options" class="answer-options"></div>
-
-                <div id="feedback" class="feedback hidden" aria-live="polite"></div>
-
-                <div class="challenge-actions">
-                    <button id="submit-answer" class="primary-button">Submit Answer →</button>
-                    <button id="next-question" class="primary-button hidden">Continue →</button>
-                    <button id="exit-mission" class="secondary-button">Exit Mission</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="leaderboard" class="leaderboard-section">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">THE COMPETITION</p>
-                    <h2>Leaderboard</h2>
-                </div>
-            </div>
-
-            <div class="leaderboard-card">
-                <p class="muted">
-                    Your local practice profile is active. A shared leaderboard
-                    will be available when user accounts and a backend are added.
-                </p>
-                <div class="leader-row">
-                    <span>01</span>
-                    <div class="avatar">P</div>
-                    <strong>Practice Player</strong>
-                    <span id="leader-xp">0 XP</span>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <a href="#" class="logo">DEVOPS<span>LEVEL UP</span></a>
-        <p>Learn. Solve. Level Up.</p>
-        <p class="footer-note">An educational project for aspiring DevOps engineers.</p>
-    </footer>
-
-    <script src="js/app.js"></script>
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">&gt;_</span><span>DEVOPS<span class="accent"> LEVEL UP</span></span></a><p>Learn. Solve. Level Up. <span>Built by a future DevOps engineer.</span></p></footer>
 </body>
 </html>
-```
