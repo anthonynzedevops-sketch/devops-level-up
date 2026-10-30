@@ -82,3 +82,13 @@ Aspiring DevOps Engineer.
 ---
 
 *Learn by doing. Solve real-world-inspired problems. Level up your DevOps skills.*
+## 📸 Project Screenshots
+
+### Mission Control
+![Mission Control](screenshots/mission-control.png)
+
+### Terminal Lab
+![Terminal Lab](screenshots/terminal-lab.png)
+
+### Advanced DevOps Challenges
+![Advanced Challenges](screenshots/advanced-challenges.png)
