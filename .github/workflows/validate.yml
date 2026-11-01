@@ -1,0 +1,35 @@
+name: DevOps Level Up - Code Validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get project code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check main application JavaScript
+        run: node --check js/app.js
+
+      - name: Check advanced missions JavaScript
+        run: node --check js/advanced-missions.js
+
+      - name: Confirm project files
+        run: |
+          test -f index.html
+          test -f README.md
+          echo "Project files found successfully."
