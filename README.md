@@ -1,3 +1,4 @@
+[![Code Validation](https://github.com/anthonynzedevops-sketch/devops-level-up/actions/workflows/validate.yml/badge.svg)](https://github.com/anthonynzedevops-sketch/devops-level-up/actions/workflows/validate.yml)
 # 🚀 DevOps Level Up
 
 **Learn. Solve. Level Up.**
